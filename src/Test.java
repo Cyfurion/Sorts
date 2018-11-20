@@ -6,9 +6,13 @@ public class Test {
         System.out.println();
         Sorts.ascendingSort(intArray);
         Sorts.printArr(intArray);
+        String[] stringArray = {"Blue", "Red", "Green", "Yellow", "Purple", "Cyan", "Orange", "Black", "White", "Lime"};
         System.out.println();
         System.out.println();
-        Sorts.decendingSort(intArray);
-        Sorts.printArr(intArray);
+        Sorts.printArr(stringArray);
+        Sorts.descendingSort(stringArray);
+        System.out.println();
+        System.out.println();
+        Sorts.printArr(stringArray);
     }
 }
