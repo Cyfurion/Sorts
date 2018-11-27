@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Sorts {
     public static void ascendingSort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
@@ -6,6 +8,15 @@ public class Sorts {
                 if (arr[x] < arr[lowestIndex]) { lowestIndex = x; }
             }
             swap(i, lowestIndex, arr);
+        }
+    }
+    public static void ascendingSort(ArrayList<String> arr) {
+        for (int i = 0; i < arr.size() - 1; i++) {
+            int lowestIndex = i;
+            for (int x = i + 1; x < arr.size(); x++) {
+                if (arr.get(x).compareTo(arr.get(lowestIndex)) < 0) { lowestIndex = x; }
+            }
+            arr.set(i, arr.set(lowestIndex, arr.get(i)));
         }
     }
     public static void descendingSort(int[] arr) {
@@ -35,6 +46,15 @@ public class Sorts {
             swap(i, highestIndex, arr);
         }
     }
+    public static ArrayList<String> removeLongerThan(int lenMax, ArrayList<String> arr) {
+        ArrayList<String> removedItems = new ArrayList<>();
+        int i = 0;
+        while (i < arr.size()) {
+            if (arr.get(i).length() > lenMax) { removedItems.add(arr.remove(i)); }
+            else { i++; }
+        }
+        return removedItems;
+    }
 
     private static void swap(int indexA, int indexB, int[] arr) {
         int temp = arr[indexA];
@@ -49,4 +69,5 @@ public class Sorts {
 
     public static void printArr(int[] arr) { for (int x : arr) { System.out.print(x + " "); } }
     public static void printArr(String[] arr) { for (String s : arr) { System.out.print(s + " "); } }
+    public static void printArr(ArrayList<String> arr) { for (String s : arr) { System.out.print(s + " "); } }
 }
